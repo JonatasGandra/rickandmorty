@@ -10,16 +10,28 @@ const Stack = createStackNavigator();
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="CharacterList">
+      <Stack.Navigator
+        initialRouteName="CharacterList"
+        screenOptions={{
+          headerStyle: {
+            backgroundColor: "#202329",
+          },
+          headerTintColor: "#97CE4C",
+          headerTitleStyle: {
+            fontWeight: "bold",
+            fontSize: 20,
+          },
+        }}
+      >
         <Stack.Screen
           name="CharacterList"
           component={CharacterListScreen}
-          options={{ title: "Rick and Morty - Personagens" }}
+          options={{ title: "Rick and Morty" }}
         />
         <Stack.Screen
           name="CharacterDetails"
           component={CharacterDetailsScreen}
-          options={{ title: "Detalhes do Personagem" }}
+          options={{ title: "Detalhes" }}
         />
       </Stack.Navigator>
     </NavigationContainer>
